@@ -10,7 +10,14 @@
     </div>
     <div>
         @foreach($posts as $post)
-            <a href="{{ route('post.page', ['post' => $post]) }}">{{ $post->title }}</a>
+            <div>
+                <a href="{{ route('post.page', ['post' => $post]) }}">
+                    <h3>
+                       {{ $post->title }} 
+                    </h3>
+                </a>
+            </div>
+            
             
         @endforeach
     </div>
