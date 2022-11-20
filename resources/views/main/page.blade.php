@@ -5,16 +5,16 @@
 @endsection
 
 @section('content')
-<img class="main__background--image" src="{{ asset('images/main/background.jpg') }}" alt="">
+    <img class="background--image" src="{{ asset('images/main/background.jpg') }}" alt="">
     <div class="mainpage-content">
-        <div class="categories-container">
+        <div class="main__categories--container">
             @foreach($categories as $category)
-                <div class="category__box">
+                <div class="item__box">
                     <a href="{{ route('category.page',['category' => $category]) }}">
-                        <div class="category__image">
+                        <div class="main__category--image">
 
                         </div>
-                        <div class="category__text">
+                        <div class="main__category--text">
                             {{ $category->title }}
                         </div>
                     </a>

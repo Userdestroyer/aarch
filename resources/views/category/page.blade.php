@@ -5,23 +5,25 @@
 @endsection
 
 @section('content')
-    <div>
+    <div class="category__title">
         <h1>{{ $category->title }}</h1>
     </div>
-    <div>
-        @foreach($posts as $post)
-            <div>
-                <a href="{{ route('post.page', ['post' => $post]) }}">
-                    <h3>
-                       {{ $post->title }} 
-                    </h3>
-                </a>
-            </div>
-            
-            
-        @endforeach
+    <div class="mainpage-content">
+        <div class="category__posts--container">
+            @foreach($posts as $post)
+                <div class="item__box">
+                    <a href="{{ route('post.page', ['post' => $post]) }}">
+                        <div class="main__category--image">
+
+                        </div>
+                        <div class="main__category--text">
+                            {{ $post->title }}
+                        </div>
+                    </a>
+                </div>    
+            @endforeach
+        </div>
     </div>
-    
 
 @endsection
 
