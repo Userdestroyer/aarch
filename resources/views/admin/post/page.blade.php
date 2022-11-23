@@ -14,6 +14,7 @@ POSTS
     </div>
 @endforeach
 
+@push('other-scripts')
 <script>
     document.addEventListener("DOMContentLoaded", function(){
         window.dataLayer.push({
@@ -31,3 +32,4 @@ POSTS
     });
     });
 </script>
+@endpush

@@ -23,6 +23,8 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/91336082" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    @stack('other-scripts')
 </head>
 <body>
 
