@@ -18,4 +18,24 @@
     
 </section>
 
+@push('other-scripts')
+<script>
+        document.addEventListener("DOMContentLoaded", function(){
+            dataLayer.push({
+            "ecommerce": {
+                "currencyCode": "RUB",
+                "detail": {
+                    "products": [
+                        {
+                            "id": "{{ $post->getKey() }}",
+                            "name" : "{{ $post->title }}",
+                        }
+                    ]
+                }
+            }
+        });
+    });
+</script>
+@endpush
+
 @endsection
