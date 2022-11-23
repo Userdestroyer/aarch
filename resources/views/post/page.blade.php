@@ -23,19 +23,19 @@
         document.addEventListener("DOMContentLoaded", function(){
             console.log('ПОЕХАЛИ')
             window.dataLayer.push({
-            "ecommerce": {
-                "currencyCode": "RUB",
-                "detail": {
-                    "products": [
-                        {
-                            "id": "{{ $post->getKey() }}",
-                            "name" : "{{ $post->title }}",
-                        }
-                    ]
+                "ecommerce": {
+                    "currencyCode": "RUB",
+                    "detail": {
+                        "products": [
+                            {
+                                "id": "{{ $post->getKey() }}",
+                                "name" : "{{ $post->title }}",
+                            }
+                        ]
+                    }
                 }
-            }
+            });
         });
-    });
 </script>
 @endpush
 
