@@ -22,7 +22,7 @@
 <script>
         document.addEventListener("DOMContentLoaded", function(){
             console.log('ПОЕХАЛИ')
-            dataLayer.push({
+            window.dataLayer.push({
             "ecommerce": {
                 "currencyCode": "RUB",
                 "detail": {
