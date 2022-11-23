@@ -13,3 +13,21 @@ POSTS
        {{ $post->title }} 
     </div>
 @endforeach
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        window.dataLayer.push({
+        "ecommerce": {
+            "currencyCode": "RUB",
+            "<actionType>" : {
+                "actionField" : <actionField>,
+                "products": [
+                {
+                    "id": "{{ $post->getKey() }}",
+                    "name" : "{{ $post->title }}",
+                }
+            }
+        }
+    });
+    });
+</script>
