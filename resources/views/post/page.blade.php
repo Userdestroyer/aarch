@@ -21,6 +21,7 @@
 @push('other-scripts')
 <script>
         document.addEventListener("DOMContentLoaded", function(){
+            console.log('ПОЕХАЛИ')
             dataLayer.push({
             "ecommerce": {
                 "currencyCode": "RUB",
