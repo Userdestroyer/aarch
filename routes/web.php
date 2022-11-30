@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,19 +27,19 @@ Route::prefix('category')->group(function() {
 Route::get('/post/{post}', [PostController::class, 'page'])->name('post.page');
 
 //middleware
-Route::prefix('admin')->group(function() {
+Route::prefix('admin')->namespace('Admin')->name('admin.')->group(function() {
 
-    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/', [AdminController::class, 'index'])->name('index');
 
-    Route::prefix('category')->group(function() {
-        Route::get('/', [AdminController::class, 'categoryList'])->name('admin.category.list');
-        Route::get('/add', [AdminController::class, 'categoryAdd'])->name('admin.category.addPage');
-        Route::post('/add', [CategoryController::class, 'add'])->name('admin.category.add');
+    Route::prefix('category')->name('category.')->group(function() {
+        Route::get('/', [AdminController::class, 'categoryList'])->name('list');
+        Route::get('/add', [AdminController::class, 'categoryAdd'])->name('addPage');
+        Route::post('/add', [CategoryController::class, 'add'])->name('add');
     });
 
-    Route::prefix('posts')->group(function() {
-        Route::get('/', [AdminController::class, 'postList'])->name('admin.post.list');
-        Route::get('/add', [AdminController::class, 'postAdd'])->name('admin.post.addPage');
-        Route::post('/add', [PostController::class, 'add'])->name('admin.post.add');
+    Route::prefix('posts')->name('post.')->group(function() {
+        Route::get('/', [AdminController::class, 'postList'])->name('list');
+        Route::get('/add', [AdminController::class, 'postAdd'])->name('addPage');
+        Route::post('/add', [PostController::class, 'add'])->name('add');
     });
 });

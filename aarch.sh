@@ -10,6 +10,9 @@ else
         sudo docker container ls
     elif [ $1 = "clear" ]; then
         docker volume rm $(docker volume ls -qf dangling=true)
+        ./aarch.sh artisan cache:clear
+        ./aarch.sh artisan config:clear
+        ./aarch.sh artisan config:cache
     else
         docker-compose run --rm $1 $2 $3 $4
     fi

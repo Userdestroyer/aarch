@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-    <img class="background--image" src="{{ asset('images/main/background.jpg') }}" alt="">
     <div class="mainpage-content">
         <div class="main__categories--container">
             @foreach($categories as $category)
